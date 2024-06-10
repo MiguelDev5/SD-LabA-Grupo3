@@ -26,7 +26,7 @@ public class SalesService implements SalesServiceI{
 
     // Retorna el precio del producto
     public double getProductPrice(String productoPrecio){
-        String number = productoPrecio.substring(productoPrecio.lastIndexOf(" "));
+        String number = productoPrecio.substring(productoPrecio.lastIndexOf(" ") + 1);
         return Double.parseDouble(number);
     }
 }
