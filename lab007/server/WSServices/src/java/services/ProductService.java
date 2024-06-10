@@ -9,6 +9,7 @@ import models.Product;
 @WebService(serviceName = "ProductService")
 public class ProductService implements ProductServiceI{
 
+    // Retorna la lista hardcodeada de los productos en la clase Product
     @Override
     public List<Product> getAllProducts() {
         return Product.getProducts();
