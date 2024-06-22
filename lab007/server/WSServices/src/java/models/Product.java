@@ -21,12 +21,13 @@ public class Product {
 
     public static List<Product> products = new ArrayList<>(
         Arrays.asList(
-            new Product("Pan", 1.0),
-            new Product("Queso", 2.0),
-            new Product("Mantequilla", 3.0),
+            new Product("Pan", 0.30),
+            new Product("Queso", 2.5),
+            new Product("Galletas", 1.4),
             new Product("Aceituna", 4.0),
-            new Product("Jamon", 5.0),
-            new Product("Mermelada", 6.0)
+            new Product("Jamon", 3.6),
+            new Product("Azucar", 5.0),
+            new Product("Keke", 1.5)
         )
     ); 
     

@@ -13,11 +13,20 @@ public class SalesService implements SalesServiceI{
     @WebMethod(operationName = "sale")
     public String sale(@WebParam(name = "productsList") List<String> productsSelected) {
         String message = "( ";
+        double total = 0;
         
         for(String p : productsSelected){
             message+=(p+" ");
+            total += getProductPrice(message);
         }
         
-        return "Compra exitosaaaa de (" + productsSelected.size() + ") " + message + ")";
+        // Retorna la compra exitosa y el costo final de los productos en un solo mensaje
+        return "Compra exitosaaaa de (" + productsSelected.size() + ") " + message + "| Costo: " + total + " soles)";
+    }
+
+    // Retorna el precio del producto
+    public double getProductPrice(String productoPrecio){
+        String number = productoPrecio.substring(productoPrecio.lastIndexOf(" ") + 1);
+        return Double.parseDouble(number);
     }
 }
