@@ -1,23 +1,24 @@
-package models;
+package com.ocho.miguel;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectionDB {
+public class DBConnect {
     Connection con;
 
     public Connection getDBConnection() {
-        
-        String myDB = "jdbc:mysql://localhost:3306/pruebasdb08?serverTimezone=UTC";
+
+        String myDB = "jdbc:mysql://localhost:3306/proyectosdb?serverTimezone=UTC";
         try{
-            System.out.print("Preprando ccconnection......");
+            System.out.println("Preprando conexión...");
             con = DriverManager.getConnection(myDB, "root", "m5249024");
-            System.out.print("Conexión exitosa");
+            System.out.println("Conexión exitosa");
             return con;
         }catch(SQLException e){
-            System.out.print("Error " + e.toString());
+            System.out.println("Error de conexión " + e.toString());
         }
-        
+
         return null;
     }
 }
