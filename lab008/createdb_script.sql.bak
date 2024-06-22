@@ -1,0 +1,36 @@
+CREATE TABLE IF NOT EXISTS Departamento (
+  'IDDpto' INT NOT NULL PRIMARY KEY,
+  'Nombre' VARCHAR(45) NOT NULL,
+  'Descripcion' VARCHAR(200) NULL,
+  'Telefono' VARCHAR(15) NULL,
+  'Fax' VARCHAR(15) NULL);	
+
+CREATE TABLE IF NOT EXISTS Proyecto (
+  'IDProy' INT NOT NULL,
+  'Nombre' VARCHAR(45) NOT NULL,
+  'Descripcion' VARCHAR(100) NOT NULL,
+  'FecInicio' DATE NOT NULL,
+  'FecTermino' DATE NOT NULL,
+  'FKDto' INT NOT NULL);
+
+CREATE TABLE IF NOT EXISTS Ingeniero (
+  'IDIng' INT NOT NULL,
+  'Nombres' VARCHAR(50) NOT NULL,
+  'Apellidos' VARCHAR(50) NULL,
+  'Especialidad' VARCHAR(20) NULL,
+  'Cargo' VARCHAR(20) NULL);
+  
+CREATE TABLE IF NOT EXISTS Asignacion (
+  'IDAsig' INT NOT NULL,
+  'IDProy' INT NOT NULL,
+  'IDIng' INT NOT NULL)
+
+-- Relación de proyectos con Departamento
+ALTER TABLE "Proyecto" ADD FOREIGN KEY ("FKDto") REFERENCES "Departamento" ("IDDpto");
+
+-- Relación de Proyectos y Ingenieros
+ALTER TABLE "Asignacion" ADD FOREIGN KEY ("IDProy") REFERENCES "Proyecto" ("IDProy");
+ALTER TABLE "Asignacion" ADD FOREIGN KEY ("IDIng") REFERENCES "Ingeniero" ("IDIng");
+
+--vRelación 
+ALTER TABLE "sl_sale" ADD FOREIGN KEY ("seller_fk") REFERENCES "rp_user" ("email");
