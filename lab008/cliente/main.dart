@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:front07/widgets/screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:front08/widgets/screen.dart';
 
 void main() {
-  runApp(
-    const ProviderScope(
+  runApp(const ProviderScope(
       child: MyApp(),
     ),
   );
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Laboratorio008',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

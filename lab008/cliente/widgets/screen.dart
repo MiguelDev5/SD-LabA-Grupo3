@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:front07/widgets/appbar.dart';
-import 'package:front07/widgets/body.dart';
-import 'package:front07/widgets/resume.dart';
+import 'package:front08/widgets/appbar.dart';
+import 'package:front08/widgets/body.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
@@ -16,8 +15,7 @@ class MainScreen extends StatelessWidget {
       child: Scaffold(
         key: _scaffoldKey,
         appBar: const MyAppBar(),
-        body: const MyBody(),
-        floatingActionButton: const MyResume(),
+        body: const MyBody()
       ),
     );
   }
