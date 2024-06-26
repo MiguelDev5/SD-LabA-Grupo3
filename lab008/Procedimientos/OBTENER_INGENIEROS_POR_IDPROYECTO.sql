@@ -5,9 +5,9 @@ BEGIN
         p.Descripcion       AS 'Descripcion',
         p.FecInicio         AS 'FecInicio',
         p.FecTermino        AS 'FecTermino',
-        i.Nombres           AS 'NombreIng.',
-        i.Especialidad      AS 'EspecialidadIng.',
-        i.Cargo             AS 'CargoIng.'
+        i.Nombres           AS 'NombreIng',
+        i.Especialidad      AS 'EspecialidadIng',
+        i.Cargo             AS 'CargoIng'
     FROM proyecto AS p 
     JOIN asignacion AS a ON a.FIDProy = p.IDProy
     JOIN ingeniero AS i ON i.IDIng = a.FIDIng
